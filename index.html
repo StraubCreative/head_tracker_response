@@ -90,19 +90,20 @@
           });
         });
         function callMenu() {
+            alert("callMenu function fired");
 // Download the Node helper library from twilio.com/docs/node/install
 // These vars are your accountSid and authToken from twilio.com/user/account
-var accountSid = 'ACf3dd0cb4c4e33d127cf3545f91d9b632';
-var authToken = "{{ 4a9959ea9c59aa42fcc2ddfd33ae2cb9 }}";
-var client = require('twilio')(ACf3dd0cb4c4e33d127cf3545f91d9b632, 4a9959ea9c59aa42fcc2ddfd33ae2cb9);
+//var accountSid = 'ACf3dd0cb4c4e33d127cf3545f91d9b632';
+//var authToken = "{{ 4a9959ea9c59aa42fcc2ddfd33ae2cb9 }}";
+//var client = require('twilio')(ACf3dd0cb4c4e33d127cf3545f91d9b632, 4a9959ea9c59aa42fcc2ddfd33ae2cb9);
  
-client.calls.create({
-    url: "http://demo.twilio.com/docs/voice.xml",
-    to: "+16075921663",
-    from: "+18015289992"
-}, function(err, call) {
-    process.stdout.write(call.sid);
-});
+//client.calls.create({
+//    url: "http://demo.twilio.com/docs/voice.xml",
+//    to: "+16075921663",
+//    from: "+18015289992"
+//}, function(err, call) {//
+//    process.stdout.write(call.sid);
+//});
         }
         $(function() {
           $("button.message").hover(function() {
@@ -114,6 +115,7 @@ client.calls.create({
           });
         });
         function playMenu() {
+            //alert("playMenu function fired");
             document.getElementById('linkAudio').play();
         }  
         $(function() {
