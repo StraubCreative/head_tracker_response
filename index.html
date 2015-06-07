@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         
 	</head>
-	<body>
+	<body>        
   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Head Tracker Response</a>
+          <a class="navbar-brand" href="/">Head Tracker Response</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
@@ -36,6 +36,16 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
+          <div class="col-md-8">
+        <h1>Head Tracker Response</h1>
+        <p>Emergency response app that uses facial recognition to call and communicate with 911.</p>
+        <p>Click <strong>CALL 911</strong> below and an automated message will play for the 911 responder, informing them that you are calling from a web application and can only respond to yes or no questions. At the end of the recording you will be prompted to share your identity - use your face to move the cursor left and click <strong>Identity</strong> to tell tell the responder your pre-recorded information.</p>
+        <p>Use the <strong>yes</strong> or <strong>no</strong> buttons to address any questions the responder may have.</p>
+        <button type="button" class="btn btn-lg btn-success alt yes">Yes</button>
+        <button type="button" class="btn btn-lg btn-danger alt no">No</button>
+        <button type="button" class="btn btn-lg btn-primary alt identity">ID</button>
+        <!--textarea id="t1" style="width: 400px; height: 200px;"></textarea-->
+      </div>
           <div class="col-md-4">
             <h2>Camera</h2>
             <script src="headtrackr.js"></script>
@@ -52,18 +62,6 @@
         <p><a class="btn btn-danger btn-lg" href="#" role="button">CALL 911</a></p>
               </div>
           </div>
-          <div class="col-md-8">
-        <h1>Head Tracker Response</h1>
-        <p>Emergency response app that uses facial recognition to call and communicate with 911</p>
-        <p>Click <strong>CALL 911</strong> below and an automated message will play for you. When prompted, use your face to move the cursor, and nod over buttons to tell the 911 operator where you live</p>
-        <button type="button" class="btn btn-lg btn-success alt">Yes</button>
-        <button type="button" class="btn btn-lg btn-danger alt">No</button>
-        <button type="button" class="btn btn-lg btn-default alt">Street</button>
-        <button type="button" class="btn btn-lg btn-default alt">Ave</button>
-        <button type="button" class="btn btn-lg btn-default alt">Place</button>
-        <button type="button" class="btn btn-lg btn-default alt">Circle</button>       
-        <textarea id="t1" style="width: 400px; height: 200px;"></textarea>
-      </div>
     </div>
     </div>
 
@@ -80,7 +78,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>      
 
-    <!-- Google Keyboard -->
+    <!-- Google Keyboard
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
 
@@ -97,7 +95,7 @@
 
       google.setOnLoadCallback(onLoad);
     </script>
-
+    -->
 
         <!-- Requirements for HeadTrackr -->           
 		<script>

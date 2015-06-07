@@ -5,6 +5,10 @@ body {
   padding-bottom: 20px;
 }
 
+#vid, #overlay, #debug {width: 350px; height: 240px;}
+#compare {width: 100%; height:100%;}
+
+
 /* TYPOGRAPHY */
 p {margin-left: 10px;}
 textarea {font-size: medium!important; margin-top: 15px!important;}
@@ -12,7 +16,7 @@ textarea {font-size: medium!important; margin-top: 15px!important;}
 
 /* BUTTONS */
 .btn-danger {width: 100%; height: 100px; font-size: 3.5em!important;}
-.alt {width: 100px!Important; height: 47px!important; font-size: 18px!important; margin-right: 10px;}
+.yes, .no, .identity {width: 30%!important; height: 30%!important; font-size: 3em!important; margin-left: 1%;}
 
 /* GOOGLE KEYBOARD */
 #kbd {bottom: 60px!important; height: 200px;}
