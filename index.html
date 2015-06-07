@@ -39,27 +39,23 @@
           <div class="col-md-8">
         <h1>Head Tracker Response</h1>
         <p>Emergency response app that uses facial recognition to call and communicate with 911.</p>
-        <p>Click <strong>CALL 911</strong> below and an automated message will play for the 911 responder, informing them that you are calling from a web application and can only respond to yes or no questions. At the end of the recording you will be prompted to share your identity - use your face to move the cursor left and click <strong>Identity</strong> to tell tell the responder your pre-recorded information.</p>
-        <p>Use the <strong>yes</strong> or <strong>no</strong> buttons to address any questions the responder may have.</p>
-        <button type="button" class="btn btn-lg btn-success alt yes">Yes</button>
-        <button type="button" class="btn btn-lg btn-danger alt no">No</button>
-        <button type="button" class="btn btn-lg btn-primary alt identity">ID</button>
-        <!--textarea id="t1" style="width: 400px; height: 200px;"></textarea-->
+        <p><strong>Directions</strong>: Tilt your head left/right to move cursor left or right; Nod your head up or down to move cursor up or down. <em>Cursors left on a button for more than 5 seconds will click the button and perform the action labeled.</em></p>
+        <p><Strong>Process</Strong>: Move your head to navigate your browser's cursor. Hover over the  <strong>CALL 911</strong> button below to place your call to a 911 responder. Upon phone connection, move your cursor over to where it says <strong>Play Message</strong>, and hover your cursor for 5 seconds to play your pre-recorded information.</p>
+        <button type="button" class="btn btn-lg btn-success alt message">Play Message</button>
       </div>
           <div class="col-md-4">
-            <h2>Camera</h2>
             <script src="headtrackr.js"></script>
             <canvas id="compare" width="320" height="240" style="display:none"></canvas>
             <video id="vid" autoplay loop width="320" height="240"></video>
 		    <canvas id="overlay" width="320" height="240"></canvas>
-		    <canvas id="debug" width="320" height="240"></canvas> 
+		    <canvas id="debug" width="320" height="240"></canvas>
               <div class="status">
                 <p id='gUMMessage'></p>
                 <p>Status : <span id='headtrackerMessage'></span></p>
                 <p><input type="button" onclick="htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
             <br/><br/>
                 <input type="checkbox" onclick="showProbabilityCanvas()" value="asdfasd"></input>Show probability-map</p>
-        <p><a class="btn btn-danger btn-lg 911" href="#" role="button">CALL 911</a></p>
+        <p><a class="btn btn-danger btn-lg call" href="" role="button">CALL 911</a></p>
               </div>
           </div>
     </div>
