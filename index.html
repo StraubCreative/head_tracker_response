@@ -41,7 +41,7 @@
         <p>Emergency response app that uses facial recognition to call and communicate with 911.</p>
         <p><strong>Directions</strong>: Tilt your head left/right to move cursor left or right; Nod your head up or down to move cursor up or down. <em>Cursors left on a button for more than 5 seconds will click the button and perform the action labeled.</em></p>
         <p><Strong>Process</Strong>: Move your head to navigate your browser's cursor. Hover over the  <strong>CALL 911</strong> button below to place your call to a 911 responder. Upon phone connection, move your cursor over to where it says <strong>Play Message</strong>, and hover your cursor for 5 seconds to play your pre-recorded information.</p>
-        <button type="button" class="btn btn-lg btn-success alt message" href="#" onclick="playMenu('mnu_searches', event, 0, this)" role="button">Play Message</button>
+        <button type="button" class="btn btn-lg btn-success alt message" href="#" onclick="playMenu('mnu_searches', event, 0, this);document.getElementById('linkAudio').play();" role="button">Play Message</button>
       </div>
           <div class="col-md-4">
             <script src="headtrackr.min.js"></script>
@@ -61,6 +61,10 @@
           </div>
     </div>
     </div>
+
+<audio id="linkAudio">
+  <source src="emergencyresponserecord.m4a" type="audio/mpeg">
+</audio>
 
     <div class="container">
       <footer>
@@ -86,7 +90,19 @@
           });
         });
         function callMenu() {
-            alert("callMenu function fired");
+// Download the Node helper library from twilio.com/docs/node/install
+// These vars are your accountSid and authToken from twilio.com/user/account
+var accountSid = 'ACf3dd0cb4c4e33d127cf3545f91d9b632';
+var authToken = "{{ 4a9959ea9c59aa42fcc2ddfd33ae2cb9 }}";
+var client = require('twilio')(ACf3dd0cb4c4e33d127cf3545f91d9b632, 4a9959ea9c59aa42fcc2ddfd33ae2cb9);
+ 
+client.calls.create({
+    url: "http://demo.twilio.com/docs/voice.xml",
+    to: "+16075921663",
+    from: "+18015289992"
+}, function(err, call) {
+    process.stdout.write(call.sid);
+});
         }
         $(function() {
           $("button.message").hover(function() {
@@ -98,7 +114,7 @@
           });
         });
         function playMenu() {
-            alert("playMenu function fired");
+            document.getElementById('linkAudio').play();
         }  
         $(function() {
           $("input.faceDetect").hover(function() {
