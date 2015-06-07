@@ -41,7 +41,7 @@
         <p>Emergency response app that uses facial recognition to call and communicate with 911.</p>
         <p><strong>Directions</strong>: Tilt your head left/right to move cursor left or right; Nod your head up or down to move cursor up or down. <em>Cursors left on a button for more than 5 seconds will click the button and perform the action labeled.</em></p>
         <p><Strong>Process</Strong>: Move your head to navigate your browser's cursor. Hover over the  <strong>CALL 911</strong> button below to place your call to a 911 responder. Upon phone connection, move your cursor over to where it says <strong>Play Message</strong>, and hover your cursor for 5 seconds to play your pre-recorded information.</p>
-        <button type="button" class="btn btn-lg btn-success alt message">Play Message</button>
+        <button type="button" class="btn btn-lg btn-success alt message" href="#" onclick="playMenu('mnu_searches', event, 0, this)" role="button">Play Message</button>
       </div>
           <div class="col-md-4">
             <script src="headtrackr.js"></script>
@@ -52,10 +52,10 @@
               <div class="status">
                 <p id='gUMMessage'></p>
                 <p>Status : <span id='headtrackerMessage'></span></p>
-                <p><input type="button" onclick="htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
+                <p><input type="button" class="faceDetect" onclick="htracker.stop();htracker.start();faceMenu('mnu_searches', event, 0, this);" value="reinitiate facedetection"></input>
             <br/><br/>
                 <input type="checkbox" onclick="showProbabilityCanvas()" value="asdfasd"></input>Show probability-map</p>
-        <p><a class="btn btn-danger btn-lg call" href="" role="button">CALL 911</a></p>
+        <button class="btn btn-danger btn-lg call" href="#" onclick="callMenu('mnu_searches', event, 0, this)" role="button">CALL 911</button></a></p>
               </div>
           </div>
     </div>
@@ -73,6 +73,46 @@
     <!-- Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>      
+
+    <script type="text/javascript">
+        $(function() {
+          $("button.call").hover(function() {
+            $.data(this, "timer", setTimeout($.proxy(function() {
+              $(this).click();
+            }, this), 2000));
+          }, function() {
+            clearTimeout($.data(this, "timer"));
+          });
+        });
+        function callMenu() {
+            alert("callMenu function fired");
+        }
+        $(function() {
+          $("button.message").hover(function() {
+            $.data(this, "timer", setTimeout($.proxy(function() {
+              $(this).click();
+            }, this), 2000));
+          }, function() {
+            clearTimeout($.data(this, "timer"));
+          });
+        });
+        function playMenu() {
+            alert("playMenu function fired");
+        }  
+        $(function() {
+          $("input.faceDetect").hover(function() {
+            $.data(this, "timer", setTimeout($.proxy(function() {
+              $(this).click();
+            }, this), 2000));
+          }, function() {
+            clearTimeout($.data(this, "timer"));
+          });
+        });
+        function faceMenu() {
+            alert("faceMenu function fired");
+        }          
+    </script>
+
 
     <!-- Google Keyboard
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
