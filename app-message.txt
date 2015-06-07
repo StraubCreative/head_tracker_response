@@ -1,0 +1,23 @@
+911 responder, 
+
+This message has been activated as part of an emergency response application from an individual who cannot speak to you directly due to a debhilitating medical condition or injury.
+
+Pay attention as the person in need of assistance will now share their identifying information with you.  The person requests that you immediately send medical attention to the identifier's address listed on the recording.
+
+The individual may have the opportunity to answer yes or no questions afterwards if they are able to. 
+Again, this message has been activated as part of an emergency response application. Medical assistance is needed at this time.
+
+
+My name is John Smith
+I have a spinal injury that limits mobility below my neck
+If you are hearing this message please send medical attention to
+555 Example Street
+San Francisco, CA 94555
+
+My primary contact is Jane Smith at 415-555-0000
+I have an allergy to penecillan and cannot receive anaesthesia due
+to heart arythmia.
+
+If you have further questions please ask them in the form of yes or no questions and I will
+try to answer them. If you receive no response, I may be unconscious or severely injured.
+
