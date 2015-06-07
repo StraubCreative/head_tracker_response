@@ -1,50 +1,105 @@
-
-<!doctype html>
 <html lang="en">
 	<head>
-		<title>facetracking</title>
+		<title>Head Tracker Response</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 		<meta charset="utf-8">
-		<style>
-			body {
-				background-color: #fff;
-				margin-left: 10%;
-				margin-right: 10%;
-				margin-top: 5%;
-				width: 80%;
-				overflow: hidden;
-				font-family: "Helvetica", Arial, Serif;
-				position: relative;
-			}
-		</style>
-		<script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-32642923-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
 	</head>
 	<body>
-		<script src="headtrackr.js"></script>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Head Tracker Response</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+          <div class="col-md-4">
+            <h2>Camera</h2>
+            <script src="headtrackr.js"></script>
+            <canvas id="compare" width="320" height="240" style="display:none"></canvas>
+            <video id="vid" autoplay loop width="320" height="240"></video>
+		    <canvas id="overlay" width="320" height="240"></canvas>
+		    <canvas id="debug" width="320" height="240"></canvas> 
+              <div class="status">
+                <p id='gUMMessage'></p>
+                <p>Status : <span id='headtrackerMessage'></span></p>
+                <p><input type="button" onclick="htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
+            <br/><br/>
+                <input type="checkbox" onclick="showProbabilityCanvas()" value="asdfasd"></input>Show probability-map</p>
+        <p><a class="btn btn-danger btn-lg" href="#" role="button">CALL 911</a></p>
+              </div>
+          </div>
+          <div class="col-md-8">
+        <h1>Head Tracker Response</h1>
+        <p>Emergency response app that uses facial recognition to call and communicate with 911</p>
+        <p>Click <strong>CALL 911</strong> below and an automated message will play for you. When prompted, use your face to move the cursor, and nod over buttons to tell the 911 operator where you live</p>
+        <button type="button" class="btn btn-lg btn-success alt">Yes</button>
+        <button type="button" class="btn btn-lg btn-danger alt">No</button>
+        <button type="button" class="btn btn-lg btn-default alt">Street</button>
+        <button type="button" class="btn btn-lg btn-default alt">Ave</button>
+        <button type="button" class="btn btn-lg btn-default alt">Place</button>
+        <button type="button" class="btn btn-lg btn-default alt">Circle</button>       
+        <textarea id="t1" style="width: 400px; height: 200px;"></textarea>
+      </div>
+    </div>
+    </div>
+
+    <div class="container">
+      <footer>
+        <p>Created by Zachary Straub &amp; Erika Mauersberger. A <a href="http://codeforsanfrancisco.org/hackforchange/">National Day of Civic Hacking - SF 2015</a> project. Fork or contribute <a href="https://github.com/StraubCreative/head_tracker_response">here on GitHub</a>.</p>
+      </footer>
+    </div> <!-- /container -->
 		
-		<canvas id="compare" width="320" height="240" style="display:none"></canvas>
-		<video id="vid" autoplay loop width="320" height="240"></video>
-		<canvas id="overlay" width="320" height="240"></canvas>
-		<canvas id="debug" width="320" height="240"></canvas>
-		
-		<p id='gUMMessage'></p>
-		<p>Status : <span id='headtrackerMessage'></span></p>
-		<p><input type="button" onclick="htracker.stop();htracker.start();" value="reinitiate facedetection"></input>
-		<br/><br/>
-		<input type="checkbox" onclick="showProbabilityCanvas()" value="asdfasd"></input>Show probability-map</p>
-		
+
+  <!-- Core JavaScript ==================================================================== -->
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>      
+
+    <!-- Google Keyboard -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Google Onscreen Keyboard API
+      google.load("elements", "1", {
+          packages: "keyboard"
+      });
+
+      function onLoad() {
+        var kbd = new google.elements.keyboard.Keyboard(
+          [google.elements.keyboard.LayoutCode.ENGLISH],
+          ['t1']);
+      }
+
+      google.setOnLoadCallback(onLoad);
+    </script>
+
+
+        <!-- Requirements for HeadTrackr -->           
 		<script>
 		  // set up video and canvas elements needed
 		
