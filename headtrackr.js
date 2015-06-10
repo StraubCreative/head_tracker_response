@@ -1083,7 +1083,7 @@ headtrackr.camshift.Rectangle = function(x,y,w,h) {
   this.width = w;
   this.height = h;
   
-  this.clone = function() { // FUTURE BBOX COLLISION 
+  this.clone = function() {
     var c = new headtrackr.camshift.Rectangle();
     c.height = this.height;
     c.width = this.width;
@@ -1101,6 +1101,11 @@ headtrackr.camshift.Rectangle = function(x,y,w,h) {
 				 }
 			}
     		}
+	 }
+	 if( butxy ==  headx ) || (butxy ==s idey){
+	 	$(.call).click(){
+	 		console.log("wooot it works");
+	 	}
 	 }
 };
 
